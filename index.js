@@ -68,7 +68,7 @@ function handleMode(){
 function handleDipslay(measurement,arr){
     inputEl.value = measurement
     pLength.textContent = `${measurement} meters = ${arr[1]} feet | ${measurement} feet = ${arr[0]} meters`
-    pVolume.textContent = `${measurement} = ${arr[3]} gallons | ${measurement} gallons = ${arr[2]} liters`
+    pVolume.textContent = `${measurement} liters = ${arr[3]} gallons | ${measurement} gallons = ${arr[2]} liters`
     pMass.textContent = `${measurement} kilos = ${arr[5]} pounds | ${measurement} pounds = ${arr[4]} kilos`
 }
 
