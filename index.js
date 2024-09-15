@@ -1,5 +1,15 @@
 
 let number=20
+
+let meters = (number/3.281).toFixed(3)
+let feet = (number*3.281).toFixed(3)
+
+let liters = (number*3.785).toFixed(3)
+let gallons = (number/3.785).toFixed(3)
+
+let kilos = (number/2.205).toFixed(3)
+let pounds = (number*2.205).toFixed(3)
+
 let isDarkMode = false
 const body = document.getElementById('body')
 const inputEl = document.querySelector('#input-el')
@@ -16,11 +26,15 @@ const hMass = document.getElementById('hmass')
 const pMass = document.querySelector('#pmass')
 const pLength = document.querySelector('#plength')
 const pVolume = document.querySelector('#pvolume')
+
+const mainBtn = document.querySelector('#main-btn')
 const modeBtn = document.querySelector('#mode-btn')
 
 
+mainBtn.addEventListener('click', handleConversion)
 modeBtn.addEventListener('click', handleMode)
 
+// changing betweeb light and dark mode
 function handleMode(){
     isDarkMode = !isDarkMode
     if (isDarkMode){
@@ -51,7 +65,27 @@ function handleMode(){
 }
 
 // initial display
-inputEl.value = number
-pLength.textContent = `20 meters = 65.616 feet | 20 feet = 6.096 meters`
-pVolume.textContent = `20 liters = 5.284 gallons | 20 gallons = 75.708 liters`
-pMass.textContent = `20 meters = 65.616 feet | 20 feet = 6.096 meters`
+function handleDipslay(measurement,arr){
+    inputEl.value = measurement
+    pLength.textContent = `${measurement} meters = ${arr[1]} feet | ${measurement} feet = ${arr[0]} meters`
+    pVolume.textContent = `${measurement} = ${arr[3]} gallons | ${measurement} gallons = ${arr[2]} liters`
+    pMass.textContent = `${measurement} kilos = ${arr[5]} pounds | ${measurement} pounds = ${arr[4]} kilos`
+}
+
+
+//conversion function
+function handleConversion(){
+    let measure = Number(inputEl.value)
+    meters = (measure/3.281).toFixed(3)
+    feet = (measure*3.281).toFixed(3)
+
+    liters = (measure*3.785).toFixed(3)
+    gallons = (measure/3.785).toFixed(3)
+
+    kilos = (measure/2.205).toFixed(3)
+    pounds = (measure*2.205).toFixed(3)
+
+    handleDipslay(measure, [meters,feet,liters,gallons,kilos,pounds])
+}
+
+handleDipslay(number,[meters,feet,liters,gallons,kilos,pounds])
