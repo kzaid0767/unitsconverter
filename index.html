@@ -9,27 +9,28 @@
     <link rel="stylesheet" href="style.css">
     <title>Unit Converter</title>
 </head>
-<body>
+<body id="body">
     <section class="top-section">
         <h1>Metric/Imperial Unit Conversion</h1>
         <input type="text" name="input-el" id="input-el">
         <div class="btn-container">
             <button id="main-btn">Convert</button>
-            <button id="main-btn">Light Mode</button>
-
+            <button id="mode-btn">Dark Mode</button>
         </div>
 
     </section>
     <section class="bottom-section-light">
-        <div class="light">
-            <h3 class="title">length</h3>
-            <p class="measurements">some measurements</p>
+        <div id="divlength" class="result light">
+            <h3 id="hlength" class="title nlight">Length (Meter/Feet)</h3>
+            <p id="plength" class="measurements plight">some measurements</p>
         </div>
-        <div class="light">
-
+        <div id="divvolume" class=" result light">
+            <h3 id="hvolume" class="title nlight">Volume (liters/Gallons)</h3>
+            <p id="pvolume" class="measurements plight">some measurements</p>
         </div>
-        <div class="light">
-
+        <div id="divmass" class="result light">
+            <h3 id="hmass" class="title nlight">Mass (Kilograms/Pounds)</h3>
+            <p id="pmass" class="measurements plight">some measurements</p>
         </div>
 
     </section>    
